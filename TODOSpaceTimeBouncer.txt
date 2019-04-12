@@ -1,0 +1,8 @@
+
+FPS
+
+1. Mouse pointing and player rotation, (not only y rotation)
+2. Height of players.. cylindrical instead of spherical ...?
+
+Time Turner
+1. Levels
