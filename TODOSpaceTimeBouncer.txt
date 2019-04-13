@@ -5,4 +5,23 @@ FPS
 2. Height of players.. cylindrical instead of spherical ...?
 
 Time Turner
-1. Levels
+
+1. Levels	
+	a. Create interesting puzzles. eg: pressure pads which 	have to be activated in a particular order which makes 	sense.(maybe you can give discoverable clues to point out 	the order)(harder difficulty keep the clue in an 	invisible room, mentioned in b.) (Or you can keep this as 	puzzle mode)
+	b. Create different things than just lifts, pressure pads 	etc. eg: invlisible pressure pad or trigger point, 	interactables like bookshelves, turning a book and 	opening a secret previously invisible room/place.
+2. Parallel dimensions..
+Chapter x  The Lift And Parallel Dimension
+make like : https://www.youtube.com/watch?v=cuQao3hEKfs
+and the portal should be able to be disabled to collect a key to open a door to the goal. (add a puzzle for harder difficulty)(keep goal directly in the start of parallel dimension of easy difficulty)
+
+make the forces opposite?
+
+????
+
+Upside down 
+Invert colours
+Actions done in parallel universe causes opposite effect in real world
+Can heal an enemy (or spawn one) to destroy one in real world ?
+
+?????
+

@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
 
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * journeyLength)/*new Vector3(0, 0, journeyLength)*/, 50f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * journeyLength)/*new Vector3(0, 0, journeyLength)*/, 100f * Time.deltaTime);
             
         }
         else if (Input.GetKey(KeyCode.S))
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             //playerRigidbody.velocity = new Vector3(0, 0, -2.5f);
            
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * -journeyLength), 50f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * -journeyLength), 100f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
             //playerRigidbody.velocity = new Vector3(-2.5f, 0, 0);
 
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * -journeyLength), 50f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * -journeyLength), 100f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
             //playerRigidbody.velocity = new Vector3(2.5f, 0, 0);
             
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * journeyLength), 50f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * journeyLength), 100f * Time.deltaTime);
             
         }
 

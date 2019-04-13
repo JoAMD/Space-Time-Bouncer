@@ -39,21 +39,27 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(i % n == 0)
+        //if(i % n == 0)
+        //{
+        //transform.LookAt(player.transform.position + new Vector3(Random.Range(-1, 1), player.transform.position.y, Random.Range(-1, 1)), Vector3.up);
+        //}
+        //++i;
+
+
+        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+
+        if (i % 10 == 0 && Vector3.Distance(transform.position,player.transform.position) > 3f)
         {
-            transform.LookAt(player.transform.position + new Vector3(Random.Range(-1, 1), player.transform.position.y, Random.Range(-1, 1)), Vector3.up);
+            float offset = Random.Range(3f, 4f);
+            navMeshAgent.SetDestination(player.transform.position + new Vector3(offset, 0, offset));
         }
         ++i;
-
-        if (Vector3.Distance(transform.position,player.transform.position) > 3f)
-        {
-            navMeshAgent.SetDestination(player.transform.position);
-        }
 
         if (Time.time > nextTimeToShoot)
         {
             g.shoot();
-            nextTimeToShoot = Time.time + 1 / firerate;
+            nextTimeToShoot = Time.time + 1 / firerate + Random.Range(0f, 1f);
         }
     }
 }

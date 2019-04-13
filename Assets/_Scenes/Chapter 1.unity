@@ -2169,6 +2169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 5170100977563046666, guid: 1000a85ca1b833843bc4f7f6c6f237f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5170100977563046670, guid: 1000a85ca1b833843bc4f7f6c6f237f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2223,6 +2228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170100977563046670, guid: 1000a85ca1b833843bc4f7f6c6f237f7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1000a85ca1b833843bc4f7f6c6f237f7, type: 3}

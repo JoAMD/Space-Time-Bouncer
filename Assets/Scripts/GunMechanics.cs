@@ -36,7 +36,7 @@ public class GunMechanics : MonoBehaviour
         if (Physics.Raycast(transform.position + transform.forward / 10, transform.forward, out hit))
         {
             source.PlayOneShot(shotgun, 0.5f);
-            hit.collider.GetComponent<Renderer>().material.color = Color.white;
+            //hit.collider.GetComponent<Renderer>().material.color = Color.white;
             Rigidbody hitRb = hit.rigidbody;
             if (hitRb != null)
             {
