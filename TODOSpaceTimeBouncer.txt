@@ -1,3 +1,15 @@
+AI
+
+Level generating AI
+1. Constraint Satisfaction Problems! Read on it.
+Color code the level
+
+Level playing AI
+1. RL - reinforcement learning - simple levels
+2. Contextual Bandit - Static Algorithm - no neural nets, has HMM (Hidden Markov Models) (RL is newer expansion of this)
+3. Imitation Learning
+
+
 
 FPS
 

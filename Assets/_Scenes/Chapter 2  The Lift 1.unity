@@ -129,27 +129,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
-        type: 3}
-      propertyPath: portal
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
-        type: 3}
-      propertyPath: size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1145676063}
-    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
-        type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 2348268736308285851, guid: 97f7c35ed2815bd43868c32ac0e5dd50,
-        type: 3}
     - target: {fileID: 5226868778456028508, guid: 197612fe7b4f3bd43a5b181eca0bab03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +184,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
+        type: 3}
+      propertyPath: portal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
+        type: 3}
+      propertyPath: size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1145676063}
+    - target: {fileID: 5226868778456028501, guid: 197612fe7b4f3bd43a5b181eca0bab03,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 2348268736308285851, guid: 97f7c35ed2815bd43868c32ac0e5dd50,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 197612fe7b4f3bd43a5b181eca0bab03, type: 3}
 --- !u!1001 &251903223
@@ -970,6 +970,11 @@ PrefabInstance:
       propertyPath: pastPlayer
       value: 
       objectReference: {fileID: 1725830609}
+    - target: {fileID: 4520251855535613238, guid: 3296696bf04c9d94ea4926bc4ec44acc,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 748253672}
     - target: {fileID: 4520251855535613239, guid: 3296696bf04c9d94ea4926bc4ec44acc,
         type: 3}
       propertyPath: m_LocalPosition.x

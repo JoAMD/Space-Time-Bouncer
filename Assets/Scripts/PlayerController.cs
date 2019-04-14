@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private GunMechanics g;
 
+    public Transform camera;
+
     public float Xrotation { get; private set; }
 
     private void Awake()
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         pastPlayerController = pastPlayer.GetComponent<PastPlayerController>();
         g = new GunMechanics(transform, shotgun, source, firerate, impact);
+        
     }
 
     // Update is called once per frame
@@ -115,7 +118,7 @@ public class PlayerController : MonoBehaviour
             startTime = Time.time;
         }
         */
-
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             //Debug.Log("Space");
@@ -123,22 +126,68 @@ public class PlayerController : MonoBehaviour
             explosionPos.y -= 1f;
             playerRigidbody.AddExplosionForce(100f, explosionPos, 1f);
         }
-        if (Input.GetKey(KeyCode.W))
+        */
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
             //Debug.Log("W");
             //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
 
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * journeyLength)/*new Vector3(0, 0, journeyLength)*/, 100f * Time.deltaTime);
-            
+            Vector3 targetPos = transform.position + ((transform.forward - transform.right) * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        {
+            //Debug.Log("W");
+            //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
+
+            // Set our position as a fraction of the distance between the markers.
+            Vector3 targetPos = transform.position + ((transform.forward + transform.right) * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+            //Debug.Log("W");
+            //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
+
+            // Set our position as a fraction of the distance between the markers.
+            Vector3 targetPos = transform.position + ((-transform.forward - transform.right) * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+            //Debug.Log("W");
+            //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
+
+            // Set our position as a fraction of the distance between the markers.
+            Vector3 targetPos = transform.position + ((-transform.forward + transform.right) * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
+        }
+
+        else if (Input.GetKey(KeyCode.W))
+        {
+            //Debug.Log("W");
+            //playerRigidbody.velocity = new Vector3(0, 0, 2.5f);
+
+            // Set our position as a fraction of the distance between the markers.
+            Vector3 targetPos = transform.position + (transform.forward * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             //Debug.Log("S");
             //playerRigidbody.velocity = new Vector3(0, 0, -2.5f);
-           
+
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.forward * -journeyLength), 100f * Time.deltaTime);
+            Vector3 targetPos = transform.position + (transform.forward * -journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -146,17 +195,34 @@ public class PlayerController : MonoBehaviour
             //playerRigidbody.velocity = new Vector3(-2.5f, 0, 0);
 
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * -journeyLength), 100f * Time.deltaTime);
+            Vector3 targetPos = transform.position + (transform.right * -journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D");
             //playerRigidbody.velocity = new Vector3(2.5f, 0, 0);
-            
+
             // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.right * journeyLength), 100f * Time.deltaTime);
-            
+            Vector3 targetPos = transform.position + (transform.right * journeyLength);
+            targetPos.y = 1;
+            transform.position = Vector3.Lerp(transform.position, targetPos, 100f * Time.deltaTime);
+
         }
+
+        /*
+        var X = Input.GetAxis("Horizontal");
+        var Z = Input.GetAxis("Vertical");
+
+        Vector3 axis = new Vector3(X, 0, Z);
+        transform.position = Vector3.Lerp(transform.position, transform.position + axis * journeyLength, 100f * Time.deltaTime);
+        transform.rotation = Quaternion.FromToRotation(transform.forward, camera.forward);
+
+        */
+
+
+
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -173,7 +239,7 @@ public class PlayerController : MonoBehaviour
         
         yRotation += Input.GetAxis("Mouse X") * lookSensitivity;
         xRotation -= Input.GetAxis("Mouse Y") * lookSensitivity;
-        xRotation = Mathf.Clamp(Xrotation, -90, 90);
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
         currentXRotation = Mathf.SmoothDamp(currentXRotation, xRotation, ref xRotationV, lookSmoothDamp);
         currentYRotation = Mathf.SmoothDamp(currentYRotation, yRotation, ref yRotationV, lookSmoothDamp);
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
@@ -191,6 +257,7 @@ public class PlayerController : MonoBehaviour
         //shoot();
     }
 
+    /*
     public void shoot()
     {
         RaycastHit hit;
@@ -207,6 +274,6 @@ public class PlayerController : MonoBehaviour
             Destroy(impactGO, 2);
         }
     }
-
+    */
     
 }
