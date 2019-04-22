@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Past Player
+  - block
+  - agent
+  - wall
+  - walkableSurface
+  - goal
+  - Game
+  - Bridge
   layers:
   - Default
   - TransparentFX

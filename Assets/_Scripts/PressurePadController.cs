@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressurePadController : MonoBehaviour
 {
     public GameObject bridge;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") || other.CompareTag("Past Player"))
@@ -19,4 +20,5 @@ public class PressurePadController : MonoBehaviour
             bridge.SetActive(false);
         }
     }
+
 }

@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b23992c8eb17439887f5e944bf04a40, type: 3}
-  m_Name: BigWallJumpLearning
+  m_Name: C1LearningBrain
   m_EditorClassIdentifier: 
   brainParameters:
-    vectorObservationSize: 74
-    numStackedVectorObservations: 6
-    vectorActionSize: 03000000030000000300000002000000
+    vectorObservationSize: 7
+    numStackedVectorObservations: 1
+    vectorActionSize: 02000000
     cameraResolutions: []
     vectorActionDescriptions:
     - 
     - 
-    - 
-    - 
-    vectorActionSpaceType: 0
-  model: {fileID: 11400000, guid: dc3a7a234db41444fb51386dafe44cbc, type: 3}
+    vectorActionSpaceType: 1
+  model: {fileID: 11400000, guid: c6b301d951b6ef34abccaca746a55d23, type: 3}
   inferenceDevice: 0

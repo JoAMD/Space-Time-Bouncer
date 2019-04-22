@@ -1,0 +1,11 @@
+ML_TODO
+Space Time Bouncer
+Time Turner
+
+AI using RL and CL
+
+1. Try the imitating https://www.youtube.com/watch?v=JPah1MxRvTU&feature=youtu.be  &   the seemingly absurd walljump example
+
+2. or, Use normal rl training (in ml agents) and do the curriculum byn yourself in code
+
+Or, Conextual bandits...

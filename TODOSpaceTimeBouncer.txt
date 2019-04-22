@@ -6,9 +6,12 @@ Color code the level
 
 Level playing AI
 1. RL - reinforcement learning - simple levels
-2. Contextual Bandit - Static Algorithm - no neural nets, has HMM (Hidden Markov Models) (RL is newer expansion of this)
+2. Contextual Bandit (Vowpal Wabbit) - Static Algorithm - no neural nets, has HMM (Hidden Markov Models) (RL is newer expansion of this)
 3. Imitation Learning
 
+RL - unity ML Agents
+Lesson 1 - reaching pressure pad - reward +1.0f foer reaching
+Lesson 2 - reach pressure pad and go to goal with full size bridge - reward +0.2f for pressure pad and +0.8f for goal
 
 
 FPS
