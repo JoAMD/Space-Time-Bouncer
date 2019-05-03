@@ -13,6 +13,10 @@ public class GunMechanics : MonoBehaviour
 
     public new Transform transform;
 
+    public PlayerController playerController;
+
+    public EnemyController enemyController;
+
     /*
     public GunMechanics(AudioClip shotgun, AudioSource source, float firerate, float nextTimeToShoot, GameObject impact) : this(shotgun, source)
     {
@@ -21,15 +25,25 @@ public class GunMechanics : MonoBehaviour
         this.impact = impact;
     }
     */
-    public GunMechanics(Transform transform, AudioClip shotgun, AudioSource source, float firerate, GameObject impact) 
+    public GunMechanics(Transform transform, AudioClip shotgun, AudioSource source, float firerate, GameObject impact, PlayerController playerController)
     {
         this.transform = transform;
         this.shotgun = shotgun;
         this.source = source;
         this.firerate = firerate;
         this.impact = impact;
+        this.playerController = playerController;
     }
-    public void shoot()
+    public GunMechanics(Transform transform, AudioClip shotgun, AudioSource source, float firerate, GameObject impact, EnemyController enemyController)
+    {
+        this.transform = transform;
+        this.shotgun = shotgun;
+        this.source = source;
+        this.firerate = firerate;
+        this.impact = impact;
+        this.enemyController = enemyController;
+    }
+    public void shoot(bool isPlayer)
     {
         RaycastHit hit;
         
@@ -40,7 +54,7 @@ public class GunMechanics : MonoBehaviour
             Rigidbody hitRb = hit.rigidbody;
             if (hitRb != null)
             {
-                hitRb.AddForceAtPosition(-hit.normal * 200f, hit.point);
+                hitRb.AddForceAtPosition( (isPlayer? playerController.transform.forward : enemyController.transform.forward) * 200f, hit.point);
             }
 
             target target = hit.collider.gameObject.GetComponent<target>();
@@ -50,7 +64,7 @@ public class GunMechanics : MonoBehaviour
                 target.takeHealth(1f);
             }
             
-            GameObject impactGO = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
+            GameObject impactGO = Instantiate(impact, hit.point, (isPlayer ? playerController.transform.rotation * Quaternion.Euler(0, 180, 0) : enemyController.transform.rotation * Quaternion.Euler(0, 180, 0)));
             Destroy(impactGO, 2);
         }
     }

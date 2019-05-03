@@ -1,0 +1,10 @@
+Player
+PlayerController (Script)
+	journeyLength = 0.14f
+	speed = 25f
+
+Enemy
+EnemyController (Script)
+	Nav Mesh Agent
+	Steering
+	Speed = 3.5

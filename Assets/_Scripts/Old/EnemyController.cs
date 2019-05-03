@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        g = new GunMechanics(transform, shotgun, source, firerate, impact);
+        g = new GunMechanics(transform, shotgun, source, firerate, impact, this);
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
         if (Time.time > nextTimeToShoot)
         {
-            g.shoot();
+            g.shoot(false);
             nextTimeToShoot = Time.time + 1 / firerate + Random.Range(0f, 1f);
         }
     }
