@@ -1,5 +1,12 @@
 **Space Time Bouncer - AI for a Game**
 
+**Game (PC)**
+
+
+
+https://drive.google.com/open?id=1AKLM1rZ52s4B9Gi4ojiIprLAEHwBXqXJ
+Download the folder, and run "Space Time Bouncer.exe" to play the game
+
 **Objective**
 
 
